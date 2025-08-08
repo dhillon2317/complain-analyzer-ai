@@ -116,7 +116,7 @@ export function ComplaintForm() {
                 value={formData.userType} 
                 onValueChange={(value) => handleInputChange("userType", value)}
               >
-                <SelectTrigger>
+                <SelectTrigger className="border border-gray-200">
                   <SelectValue placeholder="Select your role" />
                 </SelectTrigger>
                 <SelectContent>
@@ -136,6 +136,7 @@ export function ComplaintForm() {
                 placeholder="Email or phone number"
                 value={formData.contactInfo}
                 onChange={(e) => handleInputChange("contactInfo", e.target.value)}
+                className="border border-gray-200"
                 required
               />
             </div>
@@ -148,6 +149,7 @@ export function ComplaintForm() {
               placeholder="Brief description (e.g., 'Fan not working in Lecture Hall 3')"
               value={formData.title}
               onChange={(e) => handleInputChange("title", e.target.value)}
+              className="border border-gray-200"
               required
             />
           </div>
@@ -162,7 +164,7 @@ export function ComplaintForm() {
 • Where is it located (building, room number)?
 • How is it affecting you or others?
 • Any previous attempts to resolve it?"
-              className="min-h-32"
+              className="min-h-32 border border-gray-200"
               value={formData.description}
               onChange={(e) => handleInputChange("description", e.target.value)}
               required
@@ -176,7 +178,7 @@ export function ComplaintForm() {
                 value={formData.category} 
                 onValueChange={(value) => handleInputChange("category", value)}
               >
-                <SelectTrigger>
+                <SelectTrigger className="border border-gray-200">
                   <SelectValue placeholder="Select complaint category" />
                 </SelectTrigger>
                 <SelectContent>
@@ -195,7 +197,7 @@ export function ComplaintForm() {
                 value={formData.department} 
                 onValueChange={(value) => handleInputChange("department", value)}
               >
-                <SelectTrigger>
+                <SelectTrigger className="border border-gray-200">
                   <SelectValue placeholder="AI will auto-assign if not selected" />
                 </SelectTrigger>
                 <SelectContent>

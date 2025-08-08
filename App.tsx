@@ -101,26 +101,22 @@ export default function App() {
       {/* Main Content */}
       <div className="container mx-auto px-3 md:px-4 py-4 md:py-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList id="selector-elector" className="bg-muted text-muted-foreground items-center justify-center rounded-[25px] py-[2px] px-[-1px] grid w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl grid-cols-4 mb-4 md:mb-6 h-11 mx-auto">
-            <TabsTrigger value="dashboard" className="flex flex-col md:flex-row items-center gap-1 md:gap-1 py-1 md:py-1 text-xs md:text-sm my-[-1px] rounded-[25px] ">
-              <LayoutDashboard className="h-4 w-4 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-              <span className="hidden sm:inline">Dashboard</span>
-              <span className="sm:hidden">Dash</span>
+          <TabsList id="selector-elector" className="bg-muted text-muted-foreground items-center justify-center rounded-[25px] py-[2px] px-[-1px] grid w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl grid-cols-4 mb-4 md:mb-6 h-11 mx-auto">
+            <TabsTrigger value="dashboard" className="flex items-center justify-center gap-1 py-2 text-xs md:text-sm rounded-[25px] min-w-0">
+              <LayoutDashboard className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+              <span className="hidden md:inline truncate">Dashboard</span>
             </TabsTrigger>
-            <TabsTrigger value="submit" className="flex flex-col md:flex-row items-center gap-1 md:gap-2 py-2 md:py-2 text-xs md:text-sm my-[-1px] rounded-[25px] ">
-              <Plus className="h-4 w-4 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-              <span className="hidden sm:inline">Submit</span>
-              <span className="sm:hidden">Add</span>
+            <TabsTrigger value="submit" className="flex items-center justify-center gap-1 py-2 text-xs md:text-sm rounded-[25px] min-w-0">
+              <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+              <span className="hidden md:inline truncate">Submit</span>
             </TabsTrigger>
-            <TabsTrigger value="analysis" className="flex flex-col md:flex-row items-center gap-1 md:gap-2 py-2 md:py-2 text-xs md:text-sm my-[-1px] rounded-[25px] ">
-              <Brain className="h-4 w-4 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-              <span className="hidden sm:inline">Analysis</span>
-              <span className="sm:hidden">AI</span>
+            <TabsTrigger value="analysis" className="flex items-center justify-center gap-1 py-2 text-xs md:text-sm rounded-[25px] min-w-0">
+              <Brain className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+              <span className="hidden md:inline truncate">Analysis</span>
             </TabsTrigger>
-            <TabsTrigger value="analytics" className="flex flex-col md:flex-row items-center gap-1 md:gap-2 py-2 md:py-2 text-xs md:text-sm my-[-1px] rounded-[25px] ">
-              <BarChart3 className="h-4 w-4 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-              <span className="hidden sm:inline">Analytics</span>
-              <span className="sm:hidden">Stats</span>
+            <TabsTrigger value="analytics" className="flex items-center justify-center gap-1 py-2 text-xs md:text-sm rounded-[25px] min-w-0">
+              <BarChart3 className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+              <span className="hidden md:inline truncate">Analytics</span>
             </TabsTrigger>
           </TabsList>
 
