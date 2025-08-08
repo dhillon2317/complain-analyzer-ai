@@ -2,25 +2,27 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { Progress } from "./ui/progress";
 import { Button } from "./ui/button";
-import { 
-  Brain, 
-  Clock, 
-  Users, 
-  AlertTriangle, 
-  CheckCircle2, 
+import {
+  Brain,
+  Clock,
+  Users,
+  AlertTriangle,
+  CheckCircle2,
   ArrowRight,
   TrendingUp,
   Target
 } from "lucide-react";
 import { getCurrentDomain } from "./DomainConfig";
+import React from "react";
 
 interface ComplaintAnalysisProps {
   complaintId: string;
+  onChangeDomain: () => void;
 }
 
-export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
+export function ComplaintAnalysis({ complaintId, onChangeDomain }: ComplaintAnalysisProps) {
   const domain = getCurrentDomain();
-  
+
   // College-specific AI analysis data
   const analysisData = {
     complaint: {
@@ -67,14 +69,14 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
         },
         {
           action: "Arrange temporary ventilation (portable fans) if repair takes longer",
-          priority: "Medium", 
+          priority: "Medium",
           estimatedTime: "30 minutes",
           assignee: "Facility Coordinator"
         },
         {
           action: "Check electrical connections in all lecture halls for preventive maintenance",
           priority: "Medium",
-          estimatedTime: "4 hours", 
+          estimatedTime: "4 hours",
           assignee: "Electrical Maintenance"
         },
         {
@@ -102,7 +104,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
   const getSeverityColor = (severity: string) => {
     switch (severity) {
       case "Critical": return "destructive";
-      case "High": return "destructive"; 
+      case "High": return "destructive";
       case "Medium": return "secondary";
       case "Low": return "outline";
       default: return "outline";
@@ -121,6 +123,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
 
   return (
     <div className="space-y-6">
+
       {/* Header */}
       <Card>
         <CardHeader>
@@ -140,7 +143,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-4 md:grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <div className="text-center">
               <div className="flex items-center justify-center mb-2">
                 <Target className="h-5 w-5 text-blue-500" />
@@ -150,7 +153,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
                 {analysisData.aiAnalysis.priority}
               </div>
             </div>
-            
+
             <div className="text-center">
               <div className="flex items-center justify-center mb-2">
                 <Clock className="h-5 w-5 text-green-500" />
@@ -193,7 +196,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div>
                 <h4 className="font-medium mb-2">Students Affected</h4>
@@ -202,7 +205,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
                 </p>
                 <p className="text-sm text-muted-foreground">Directly impacted by this issue</p>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-2">Classes Impacted</h4>
                 <p className="text-2xl font-bold text-blue-600">
@@ -222,7 +225,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
                   Affecting student concentration and attendance
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-2">Urgency Score</h4>
                 <div className="flex items-center gap-2">
@@ -305,7 +308,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-medium mb-3">Risk Factors</h4>
               <ul className="space-y-2">
@@ -317,7 +320,7 @@ export function ComplaintAnalysis({ complaintId }: ComplaintAnalysisProps) {
                 ))}
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-medium mb-3">Sentiment Analysis</h4>
               <div className="space-y-3">

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { DOMAIN_CONFIGS, setCurrentDomain, type DomainConfig } from "./DomainConfig";
+
 
 interface DomainSelectorProps {
   onDomainSelected: (domain: DomainConfig) => void;
@@ -37,7 +38,7 @@ export function DomainSelector({ onDomainSelected }: DomainSelectorProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
           {domains.map((domain) => (
             <Card
               key={domain.id}

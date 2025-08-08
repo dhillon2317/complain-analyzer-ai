@@ -90,7 +90,7 @@ export function Analytics() {
   return (
     <div className="space-y-6">
       {/* College-specific Key Metrics */}
-      <div className="grid grid-cols-4 md:grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Avg Resolution Time</CardTitle>
@@ -158,7 +158,7 @@ export function Analytics() {
       </Card>
 
       {/* Charts Row */}
-      <div className="grid grid-cols-2 lg:grid-cols-1 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <CardHeader>
             <CardTitle>Monthly Complaint Trends</CardTitle>
@@ -272,7 +272,7 @@ export function Analytics() {
           <CardDescription>Patterns and trends identified specifically for educational institutions</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {aiInsights.map((insight, index) => (
               <div key={index} className="border rounded-lg p-4 space-y-3">
                 <div className="flex items-start justify-between">

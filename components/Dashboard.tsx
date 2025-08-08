@@ -3,6 +3,7 @@ import { Badge } from "./ui/badge";
 import { Progress } from "./ui/progress";
 import { AlertTriangle, Clock, CheckCircle, TrendingUp } from "lucide-react";
 import { getCurrentDomain } from "./DomainConfig";
+import React from "react";
 
 interface ComplaintStats {
   total: number;
@@ -117,7 +118,7 @@ export function Dashboard() {
       </Card>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-4 md:grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Complaints</CardTitle>
