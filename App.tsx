@@ -4,7 +4,7 @@ import { Button } from "./components/ui/button";
 import { Badge } from "./components/ui/badge";
 import { TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Tabs } from "@radix-ui/react-tabs";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import {
   BarChart3,
   Brain,
