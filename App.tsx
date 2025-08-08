@@ -4,6 +4,7 @@ import { Button } from "./components/ui/button";
 import { Badge } from "./components/ui/badge";
 import { TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Tabs } from "@radix-ui/react-tabs";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import {
   BarChart3,
   Brain,
@@ -63,6 +64,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background">
+      <VercelAnalytics />
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-3 md:px-4 py-3 md:py-4">
